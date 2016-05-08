@@ -1,0 +1,382 @@
+ html,body { width:100%; height: 100%; margin: 0px; padding: 0px; background-color: #ecf0f1; font-family: Verdana, Arial, Helvetica, sans-serif;}
+
+div#header{   
+   z-index:1000;
+   width:100%;
+   height:50px;
+   background-color:#6ea7d2;
+   border-bottom:2px solid #3e77a2;
+   position:fixed;
+   top:0px;
+   left:0px;
+   right:0px;
+}
+
+div#header ul#nav {
+    text-align: center;
+    list-style:none;
+    margin-top:10px;
+}
+
+div#header ul#nav li {
+    display:inline-block;
+    font-size:0.8em;
+    width:32px;
+    height:32px;
+    margin-right:5px;
+    margin-left:5px;
+}
+
+div#header ul#outOfYetigroo {
+    position: fixed;
+    right: 10px;
+    top:0px;
+    margin: 0px;
+    padding: 0px;
+    list-style:none;
+    width: auto;
+    height: 22px;
+}
+
+div#header ul#outOfYetigroo li {
+    float: left;
+    width: 24px;
+    height: 22px;
+    margin-right: 2px;
+}
+
+div#header ul#outOfYetigroo li a {
+width: 24px;
+height: 22px;
+display: block;
+text-align: left;
+background-image: url("../../img/icon/outOfGame-ltr.png");
+}
+
+div#header ul#outOfYetigroo li a img {
+margin-left: 4px;
+margin-top:2px;
+}
+
+div#header ul#outOfYetigroo li a:hover {
+    background-position: left -32px;
+}
+
+div#header ul#outOfYetigroo li a:active {
+    background-position: left -64px;
+}
+
+div#wrapper {
+    position:absolute;
+    top:50px;
+    left:0px;
+    bottom:25px;
+    min-width:750px;
+    width:100%;
+    background-color: #ecf0f1;
+}
+
+div#wrapper-content {
+    position:absolute;
+    top:0px;
+    left:227px;
+    bottom:0px;
+    width:calc(100% - 227px - 50px);
+    overflow-y:auto;
+    overflow-x:hidden;
+    padding-bottom: 20px;
+}
+
+div#wrapper-center{
+    margin:0 auto;    
+    padding-bottom: 20px;
+    
+}
+
+
+div#shoutbar {
+    position:absolute;
+    top:0px;
+    left:0px;
+    bottom:0px;
+    width:225px;
+    overflow:auto;
+    background-color: #D8D8D8;
+    border-right:2px solid #B8B8B8;
+}
+
+div#shoutbar div.shoutbox{
+    width:100%;
+    position:absolute;
+    top:0px;
+    bottom:83px;
+    left:0px;
+    padding-top: 3px;
+    overflow: auto;
+}
+
+div#shoutbar div.shoutbox div.shout{
+    font-size:11px;
+    border-bottom: 1px solid #AAAAAA;
+    word-break: break-all;
+}
+
+div#shoutbar div.shoutbox div.shout span.time{
+    color:#777777;
+    font-size:10px;
+    float:right;
+}
+div#shoutbar div.shoutform{
+    width:100%;
+    position:absolute;
+    bottom:0px;
+    left:0px;
+}
+
+div#shoutbar div.shoutform textarea {
+    width: 221px;
+    resize:none;
+    border: none;
+    border-top: 2px solid #3e77a2;
+    padding: 2px;
+    background-color: #6EA7D2;
+    height:75px;
+    margin:0;
+}
+
+div#shoutbar div.shoutform textarea.disabled {
+    background-color: #EF4836;
+}
+
+div#headbar {
+    position:absolute;
+    top:0px;
+    right:0px;
+    bottom:0px;
+    width:50px;
+    overflow:auto;
+    background-color: #D8D8D8;
+    border-left:2px solid #B8B8B8;
+}
+
+
+div#footer {
+    width:100%;
+    height: 25px;
+    margin:0 auto;
+    background-color:#353535;
+    position:fixed;
+    bottom:0px;
+    left:0px;
+    font-size:10px;
+    color:#BBBBBB;
+}
+
+
+div.box{    
+    margin: 0 auto;
+    margin-top:10px;
+    margin-bottom:10px;
+    background-color: #D8D8D8;
+    padding-bottom: 10px;
+}
+
+div.box.cgu div{
+    padding-right:10px;
+    padding-left:10px;
+}
+
+div.box .yeti-btn {
+    width:150px;
+    margin-bottom:5px;
+}
+
+div.box form input:not([type='checkbox']) {
+    width:250px;
+    margin-bottom:5px;
+    height:25px;
+}
+
+div.box.cgu {
+    width:750px;
+}
+
+div.box.cgu li{
+    margin-left:40px;
+}
+div.box.login, div.box.register, div.box.activation, div.box.recovery {
+    width:500px;
+}
+
+div.box h1 {
+    width:100%;
+    height: 50px;
+    padding-top: 6px;
+    background-color:#353535;
+    color: #D8D8D8;    
+}
+
+
+span.error {
+    font-size: 13px;
+    color:red;
+    font-weight: bold;
+}
+
+/* --------------- CORNER YETIGROO ---------------*/
+.corner-left {
+border-top-left-radius:3px;
+border-bottom-left-radius:3px;
+}
+.corner-right {
+border-top-right-radius:3px;
+border-bottom-right-radius:3px;
+}
+.corner-top {
+border-top-right-radius:3px;
+border-top-left-radius:3px;
+}
+.corner-bottom {
+border-bottom-right-radius:3px;
+border-bottom-left-radius:3px;
+}
+.corner-all {
+-moz-border-radius:3px;
+-webkit-border-radius:3px;
+border-radius:3px;
+}
+
+/* --------------- BUTTON YETIGROO ---------------*/
+
+.yeti-btn {
+	background-color:#353535;
+        word-break: break-all; 
+	border:1px solid #0b0e07;
+	display:inline-block;
+	cursor:pointer;
+	color:#D8D8D8;
+	font-family:arial;
+	font-size:15px;
+	padding:9px 23px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #161c1f;
+}
+.yeti-btn:hover {	
+	background-color:#282828;
+        color: #FAA523;
+}
+.yeti-btn:active {
+	position:relative;
+	top:1px;
+        left:1px;
+}
+
+/* --------------- LINK YETIGROO ---------------*/
+a {
+    color: #222;
+}
+a.important {
+    color: red;
+    font-weight: bold;
+}
+a:hover {
+    color: #FAA523;
+}
+
+/* --------------- ICON YETIGROO ---------------*/
+
+.photo-btn {
+background-image:url('../../img/icon/photo.png');
+width:32px;
+height:32px;
+background-size:32px 64px;
+background-position: 0px 0px;
+
+}
+.photo-btn:hover {
+background-position: 0px 32px;
+}
+
+.admin-btn {
+background-image:url('../../img/icon/admin.png');
+width:32px;
+height:32px;
+background-size:32px 64px;
+background-position: 0px 0px;
+
+}
+.admin-btn:hover {
+background-position: 0px 32px;
+}
+
+.home-btn {
+background-image:url('../../img/icon/home.png');
+width:32px;
+height:32px;
+background-size:32px 64px;
+background-position: 0px 0px;
+
+}
+.home-btn:hover {
+background-position: 0px 32px;
+}
+
+.foyz-btn {
+background-image:url('../../img/icon/foyz.png');
+width:32px;
+height:32px;
+background-size:32px 64px;
+background-position: 0px 0px;
+
+}
+.foyz-btn:hover {
+background-position: 0px 32px;
+}
+
+.groups-btn {
+background-image:url('../../img/icon/group.png');
+width:32px;
+height:32px;
+background-size:32px 74px;
+background-position: 0px -1px;
+
+}
+.groups-btn:hover {
+background-position: 0px 37px;
+}
+
+.car-btn {
+background-image:url('../../img/icon/car.png');
+width:32px;
+height:32px;
+background-size:32px 74px;
+background-position: 0px -5px;
+
+}
+.car-btn:hover {
+background-position: 0px 32px;
+}
+
+.beer-btn {
+background-image:url('../../img/icon/beer.png');
+width:32px;
+height:32px;
+background-size:32px 64px;
+background-position: 0px 0px;
+
+}
+.beer-btn:hover {
+background-position: 0px 32px;
+}
+
+.bde-btn {
+background-image:url('../../img/icon/bde.png');
+width:32px;
+height:32px;
+background-size:32px 74px;
+background-position: 0px 0px;
+
+}
+.bde-btn:hover {
+background-position: 0px 37px;
+}
