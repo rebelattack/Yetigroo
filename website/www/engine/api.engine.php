@@ -39,9 +39,15 @@ class Api {
                 case "getlastshout":
                     echo $this->getLastShout();
                     break;
+                case "insertNewPost":
+                    echo $this->createNewPost();
+                    break;
             }
         }    
     }
+    
+    
+    
     
     private function getAllShout(){
         global $database;

@@ -15,10 +15,84 @@ class Ajax {
                    $this->insertnewShout();
                     break;
                 case "getnewshout":
-                   $this->getnewShout();
+                    $this->getnewShout();
                     break; 
+                case "toggleGroup":
+                    $this->toggleGroup();
+                    break;
+                case "insertpostlike":
+                    $this->postLike();
+                    break;
             }
-        }   
+        }
+        if(isset($_GET["a"]) && @$_GET["a"] == "autocomplete"){
+            $this->autocomplete();
+        }
+    }
+    
+    private function postLike(){
+        global $database;
+        
+        if(is_numeric(@$_POST["p"])){
+           $id = @$_POST["p"];
+           $listLikers = $database->getPostLikers($id);
+           if(in_array($_SESSION["id"], $listLikers)){
+               $database->deleteLike($id);
+           } else {
+               $database->createLike($id);
+           }
+        }
+        
+    }
+    
+    private function autocomplete(){
+        global $database;
+        $term = $this->sanitize(@$_POST["term"]);
+        if(@$_GET["o"] != 'onlytag'){
+            echo 1;
+            $user_data = $database->autocompleteUser($term);
+            foreach( $user_data as $user ){
+                $row['value'] = $user['prenom'].' '.$user['nom'];
+                $row['type'] = 'user';
+                $row['id'] = $user['id'];
+                $row_set[] = $row;
+            }
+        }
+
+        if(@$_GET["o"] != 'onlyuser'){
+            $tag_data = $database->autocompleteTag($term);
+            foreach( $tag_data as $tag ){
+                $row['value'] = $tag['tag'];
+                $row['type'] = 'tag';
+                $row['id'] = trim($tag['tag'],'#');
+                $row_set[] = $row;
+            }
+        }
+        echo json_encode($row_set);
+        return json_encode($row_set);
+    }
+    
+    private function toggleGroup(){        
+        $group = $this->sanitize(@$_POST["g"]);        
+        if($group == "albums"){
+            $_SESSION['active_albums'] = !$_SESSION['active_albums'];
+        }
+        else if(is_numeric($group)){            
+            if(in_array($group,$_SESSION['active_group'])){
+                $active_groups = $_SESSION['active_group'];
+                if(($key = array_search($group , $active_groups)) !== false){
+                    unset($active_groups[$key]);
+                    $_SESSION['active_group'] = $active_groups;
+                }            
+            }
+            else{
+                $groups = $_SESSION['group'];
+                $active_groups = $_SESSION['active_group'];
+                if((in_array($group,$groups) == true || $group == 0) && in_array($group,$active_groups) === false){
+                    $_SESSION['active_group'][] = $group;
+                }
+            }
+        }
     }
     
     private function insertnewShout(){

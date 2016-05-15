@@ -26,8 +26,10 @@ $_SMILEYS = array(
 	':D' => 'bigsmile.png',
 	':-D' => 'bigsmile.png'
 	);
+$_YETIGROO["image_extension"] = array("jpeg", "jpg", "png", "gif");
 
 DEFINE("ADMIN_GROUP_ID",1);
-
-
+define('IMAGE_SIZE', 9*1048576); //Taille des images des posts
+define('SIZE_MAX',1000);
+define("POST_LIMIT",20);
 ?>
